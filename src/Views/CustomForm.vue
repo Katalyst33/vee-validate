@@ -1,52 +1,47 @@
 <template>
   <div>
     <Form
-        @submit="onSubmit"
-        :validation-schema="schema"
-        @invalid-submit="onInvalidSubmit"
+      @submit="onSubmit"
+      :validation-schema="schema"
+      @invalid-submit="onInvalidSubmit"
     >
-        <input
-            type="text"
-
-
-            placeholder="Enter your name"
-        />
       <TextInput
-          name="username"
-          type="text"
-          label="User name"
-          placeholder="Your Name"
-          success-message="nice name!"
+        name="username"
+        type="text"
+        label="User name"
+        placeholder="Your Name"
+        success-message="nice name!"
+        autocomplete="off"
       />
       <TextInput
-          name="name"
-          type="text"
-          label="Full Name"
-          placeholder="Your Name"
-          success-message="Nice to meet you!"
+        name="name"
+        type="text"
+        label="Full Name"
+        placeholder="Your Name"
+        success-message="Nice to meet you!"
       />
       <TextInput
-          name="email"
-          type="email"
-          label="E-mail"
-          placeholder="Your email address"
-          success-message="Got it, we won't spam you!"
+        name="email"
+        type="email"
+        label="E-mail"
+        placeholder="Your email address"
+        success-message="Got it, we won't spam you!"
       />
       <TextInput
-          name="password"
-          type="password"
-          label="Password"
-          placeholder="Your password"
-          success-message="Nice and secure!"
+        name="password"
+        type="password"
+        label="Password"
+        placeholder="Your password"
+        success-message="Nice and secure!"
       />
       <TextInput
-          name="confirm_password"
-          type="password"
-          label="Confirm Password"
-          placeholder="Type it again"
-          success-message="Glad you remembered it!"
+        name="confirm_password"
+        type="password"
+        label="Confirm Password"
+        placeholder="Type it again"
+        success-message="Glad you remembered it!"
       />
-      <input>
+      <input />
 
       <button class="submit-btn bg-blue-500" type="submit">Submit</button>
     </Form>
@@ -54,12 +49,12 @@
 </template>
 
 <script>
-import {Form, useField} from "vee-validate";
+import { Form, useField } from "vee-validate";
 import * as Yup from "yup";
 import TextInput from "../components/TextInput.vue";
 
 export default {
-  name: "MainForm",
+  name: "CustomForm",
   components: {
     TextInput,
     Form,
@@ -85,11 +80,9 @@ export default {
       email: Yup.string().email().required(),
       password: Yup.string().min(6).required(),
       confirm_password: Yup.string()
-          .required()
-          .oneOf([Yup.ref("password")], "Passwords do not match"),
+        .required()
+        .oneOf([Yup.ref("password")], "Passwords do not match"),
     });
-
-
 
     return {
       onSubmit,
@@ -196,5 +189,4 @@ form {
 .submit-btn:hover {
   transform: scale(1.1);
 }
-
 </style>

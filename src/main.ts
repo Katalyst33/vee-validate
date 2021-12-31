@@ -1,10 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import './tailwind.css'
+import { createApp } from "vue";
+import App from "./App.vue";
+import "./tailwind.css";
 
 import VeeValidatePlugin from "./plugins/VeeValidatePlugin";
 
+const app = createApp(App);
 
-const app = createApp(App)
-
-app.use(VeeValidatePlugin).mount('#app')
+app.use(VeeValidatePlugin).mount("#app");

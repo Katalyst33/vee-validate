@@ -1,17 +1,17 @@
 <template>
   <div
-      class="TextInput"
-      :class="{ 'has-error': !!errorMessage, success: meta.valid }"
+    class="TextInput"
+    :class="{ 'has-error': !!errorMessage, success: meta.valid }"
   >
     <label :for="name">{{ label }}</label>
     <input
-        :name="name"
-        :id="name"
-        :type="type"
-        :value="inputValue"
-        :placeholder="placeholder"
-        @input="handleChange"
-        @blur="handleBlur"
+      :name="name"
+      :id="name"
+      :type="type"
+      :value="inputValue"
+      :placeholder="placeholder"
+      @input="handleChange"
+      @blur="handleBlur"
     />
 
     <p class="help-message" v-show="errorMessage || meta.valid">
@@ -74,7 +74,7 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style scoped>
 .TextInput {
   position: relative;
   margin-bottom: calc(1em * 1.5);
@@ -95,7 +95,7 @@ input {
   background-color: #f2f5f7;
   width: 100%;
   transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out,
-  background-color 0.3s ease-in-out;
+    background-color 0.3s ease-in-out;
 }
 
 input:focus {
