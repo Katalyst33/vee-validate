@@ -33,19 +33,22 @@
           <VeeErrorMessage class="error-msg" name="email"/>
 
 
+
+        </div>
+        <div>
+          <label class="form-label">Password:</label>
+          <div class="mt-1">
+            <VeeField type="password" name="password"  v-model="form.password"
+                   class="form-input"
+                   placeholder="strong password" rules="isRequired|isMin:7"/>
+          </div>
+          <VeeErrorMessage class="error-msg" name="password"/>
+
+
         </div>
         <!--
 
-              <div>
-                <label class="flex block text-sm font-medium text-gray-700">Password:</label>
-                <div class="mt-1">
-                  <input type="password"  v-model="password"
-                         class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                         placeholder="strong password"/>
-                </div>
-                <span>{{ passwordError }}</span>
 
-              </div>
               <div>
                 <label class="flex block text-sm font-medium text-gray-700">Confirm Password:</label>
                 <div class="mt-1">
