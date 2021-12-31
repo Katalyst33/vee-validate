@@ -56,7 +56,7 @@
 <script>
 import {Form, useField} from "vee-validate";
 import * as Yup from "yup";
-import TextInput from "./components/TextInput.vue";
+import TextInput from "../components/TextInput.vue";
 
 export default {
   name: "MainForm",
@@ -196,4 +196,5 @@ form {
 .submit-btn:hover {
   transform: scale(1.1);
 }
+
 </style>

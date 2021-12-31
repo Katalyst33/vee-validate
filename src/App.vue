@@ -2,7 +2,8 @@
 import Form1 from "./Form1.vue";
 import Form2 from "./Form2.vue";
 import MainForm from "./MainForm.vue";
-import RegisterForm from "./components/RegisterForm.vue";</script>
+import RegisterForm from "./Views/RegisterForm.vue";
+import CustomRegisterForm from "./Views/CustomRegisterForm.vue";</script>
 
 <template>
   <section class="mx-40">
@@ -10,17 +11,12 @@ import RegisterForm from "./components/RegisterForm.vue";</script>
       <h1 class=" my-10">Form components</h1>
 
 
-
       <div class="flex flex-col justify-center">
 
-<RegisterForm/>
-
+     <CustomRegisterForm/>
 
 
       </div>
-
-
-
 
 
     </div>
@@ -37,7 +33,6 @@ import RegisterForm from "./components/RegisterForm.vue";</script>
   margin-top: 60px;
 }
 
-.form-field{
-  @apply border border-gray-700 rounded-md p-1 m-4;
-}
+
+
 </style>

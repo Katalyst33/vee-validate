@@ -1,6 +1,6 @@
 <template>
 
-  <VeeForm @submit="submitForm">
+  <VeeForm @submit="submitForm"  @invalid-submit="checkForm" >
     <section class="flex justify-center">
       <div class="w-full max-w-lg space-y-4">
         <div>
@@ -57,6 +57,7 @@
 
 
         </div>
+        <button class="m-4 bg-yellow-400 px-2 py-1 rounded-md text-sm">Submit</button>
 
       </div>
 
@@ -88,7 +89,7 @@ function submitForm(values) {
 
 const root = ref(null)
 function checkForm(){
-  console.log(root.value);
+  console.log('form has errros ooooh');
 }
 
 
@@ -96,13 +97,5 @@ function checkForm(){
 
 
 <style scoped>
-.error-msg {
-  @apply text-red-500 text-sm font-medium;
-}
-.form-input{
-  @apply shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md
-}
-.form-label{
-  @apply text-left text-sm font-medium text-gray-700 flex
-}
+
 </style>
