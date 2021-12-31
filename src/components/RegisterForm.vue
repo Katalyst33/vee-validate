@@ -6,7 +6,7 @@
         <div>
           <label class="form-label">Full name:</label>
           <div class="mt-1">
-            <VeeField type="text" name="name" v-model="form.name"
+            <VeeField ref="root" type="text" name="name" v-model="form.name"
                    class="form-input"
                    placeholder="full name" autocomplete="off" rules="isRequired"/>
           </div>
@@ -38,38 +38,38 @@
         <div>
           <label class="form-label">Password:</label>
           <div class="mt-1">
-            <VeeField type="password" name="password"  v-model="form.password"
+            <VeeField label="password" type="password" name="password"  v-model="form.password"
                    class="form-input"
-                   placeholder="strong password" rules="isRequired|isMin:7"/>
+                   placeholder="strong password"  ref="password" rules="isRequired|isMin:5"/>
           </div>
           <VeeErrorMessage class="error-msg" name="password"/>
 
 
         </div>
-        <!--
+        <div>
+          <label class="form-label">Confirm Password:</label>
+          <div class="mt-1">
+            <VeeField label="Confirm password" type="password" name="confirmPassword"  v-model="form.confirmPassword"
+                   class="form-input"
+                   placeholder="confirm_password" rules="isRequired|isConfirmed:@password"/>
+          </div>
+          <VeeErrorMessage class="error-msg" name="confirmPassword"/>
 
 
-              <div>
-                <label class="flex block text-sm font-medium text-gray-700">Confirm Password:</label>
-                <div class="mt-1">
-                  <input type="password" name="email" v-model="confirmPassword"
-                         class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                         placeholder="confirm_password"/>
-                </div>
-                <span>{{ confirmPasswordError}}</span>
-
-              </div>-->
-        <button class="m-4 bg-yellow-400 px-2 py-1 rounded-md text-sm">Submit</button>
+        </div>
 
       </div>
 
     </section>
   </VeeForm>
 
+
 </template>
 <script setup>
 
 
+
+import {ref} from "vue";
 
 const form = {
   name: '',
@@ -85,6 +85,12 @@ function submitForm(values) {
 
 
 }
+
+const root = ref(null)
+function checkForm(){
+  console.log(root.value);
+}
+
 
 </script>
 
