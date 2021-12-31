@@ -1,12 +1,30 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+import Form1 from "./Form1.vue";
+import Form2 from "./Form2.vue";
+import MainForm from "./MainForm.vue";
+import RegisterForm from "./components/RegisterForm.vue";</script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <section class="mx-40">
+    <div class="container mx-auto ">
+      <h1 class=" my-10">Form components</h1>
+
+
+
+      <div class="flex flex-col justify-center">
+
+<RegisterForm/>
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+  </section>
 </template>
 
 <style>
@@ -17,5 +35,9 @@ import HelloWorld from './components/HelloWorld.vue'
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.form-field{
+  @apply border border-gray-700 rounded-md p-1 m-4;
 }
 </style>
